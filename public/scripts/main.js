@@ -58,16 +58,28 @@ class SearchFeature {
     const cars = await this.fetchCars();
     const tanggal = this.tanggal.value;
     const waktu = this.waktu.value;
+    const transmision = this.transmision.value.toUpperCase();
+    const penumpang = parseInt(this.penumpang.value) ?? 1;
 
     const availableCars = cars.filter((car) => {
       const carTanggal = car.availableAt.split("T")[0];
       const carWaktu = new Date(car.availableAt).getHours();
+      const carTransmision = car.transmission.toUpperCase();
+      const carPenumpang = car.capacity;
 
-      if (carTanggal === tanggal && carWaktu <= +waktu) {
+      if (
+        carTanggal === tanggal &&
+        carWaktu <= +waktu &&
+        carTransmision === transmision &&
+        carPenumpang >= penumpang
+      ) {
         return true;
       }
       return false;
     });
+
+    console.log(`avail cars `, tanggal, waktu, typeof transmision, penumpang);
+    console.log(`avail cars ${JSON.stringify(availableCars)}`);
     return availableCars;
   }
 }
