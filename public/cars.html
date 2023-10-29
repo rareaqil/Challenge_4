@@ -15,6 +15,10 @@
       type="image/x-icon"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <!-- Bootstrap CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -151,7 +155,7 @@
                 <div class="d-flex flex-column">
                   <label for="waktu">Pilih Waktu Ambil Mobil</label>
                   <select name="waktu" id="waktu" class="form-control" required>
-                    <option value="8">08:00</option>
+                    <option value="8" selected>08:00</option>
                     <option value="12">12:00</option>
                     <option value="15">15:00</option>
                   </select>
@@ -160,6 +164,7 @@
                 <div class="d-flex flex-column">
                   <label for="penumpang">Jumlah Penumpang</label>
                   <input
+                    placeholder="Masukan jumlah penumpang"
                     type="number"
                     name="jml_penumpang"
                     id="penumpang"

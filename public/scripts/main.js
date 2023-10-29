@@ -16,7 +16,7 @@ class SearchFeature {
     this.penumpang = document.querySelector("#penumpang");
 
     this.tanggal.value = params.tanggal;
-    this.waktu.value = params.waktu;
+    this.waktu.value = params.waktu ?? 8;
     this.transmision.value = params.transmision;
     this.penumpang.value = params.jml_penumpang;
 
